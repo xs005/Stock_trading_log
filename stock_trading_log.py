@@ -2,7 +2,7 @@ import fileinput
 import json
 from collections import defaultdict
 
-# Implement the class below, keeping the constructor's signature unchanged; it should take no arguments.
+# It requires to build a class in the OA.
 class Company:
     def __init__(self, name):
         self.name = name
@@ -66,6 +66,7 @@ class MarkingPositionMonitor:
                 self.company_dict[company_name].own += order_detail["filled_quantity"] # add current bought quantity from this order
             return self.company_dict[company_name].own - self.company_dict[company_name].sell
 
+# Use the attached file to test this script.
 if __name__ == '__main__':
     onn = MarkingPositionMonitor()
     for message in fileinput.input('input001.txt'):
